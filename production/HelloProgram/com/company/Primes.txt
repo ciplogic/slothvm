@@ -1,0 +1,185 @@
+Classfile /C:/Users/cipri/IdeaProjects/HelloProgram/out/production/HelloProgram/com/company/Primes.class
+  Last modified Aug 2, 2019; size 868 bytes
+  MD5 checksum dcaca7aad3a739f5a977928fe2c70e7d
+  Compiled from "Main.java"
+class com.company.Primes
+  minor version: 0
+  major version: 55
+  flags: (0x0020) ACC_SUPER
+  this_class: #8                          // com/company/Primes
+  super_class: #9                         // java/lang/Object
+  interfaces: 0, fields: 1, methods: 3, attributes: 1
+Constant pool:
+   #1 = Methodref          #9.#29         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #8.#30         // com/company/Primes._upTo:I
+   #3 = Methodref          #8.#31         // com/company/Primes.isPrime:(I)Z
+   #4 = Fieldref           #32.#33        // java/lang/System.out:Ljava/io/PrintStream;
+   #5 = String             #34            // Is prime:
+   #6 = Methodref          #35.#36        // java/io/PrintStream.print:(Ljava/lang/String;)V
+   #7 = Methodref          #35.#37        // java/io/PrintStream.println:(I)V
+   #8 = Class              #38            // com/company/Primes
+   #9 = Class              #39            // java/lang/Object
+  #10 = Utf8               _upTo
+  #11 = Utf8               I
+  #12 = Utf8               <init>
+  #13 = Utf8               (I)V
+  #14 = Utf8               Code
+  #15 = Utf8               LineNumberTable
+  #16 = Utf8               LocalVariableTable
+  #17 = Utf8               this
+  #18 = Utf8               Lcom/company/Primes;
+  #19 = Utf8               upTo
+  #20 = Utf8               calculate
+  #21 = Utf8               ()V
+  #22 = Utf8               i
+  #23 = Utf8               StackMapTable
+  #24 = Utf8               isPrime
+  #25 = Utf8               (I)Z
+  #26 = Utf8               d
+  #27 = Utf8               SourceFile
+  #28 = Utf8               Main.java
+  #29 = NameAndType        #12:#21        // "<init>":()V
+  #30 = NameAndType        #10:#11        // _upTo:I
+  #31 = NameAndType        #24:#25        // isPrime:(I)Z
+  #32 = Class              #40            // java/lang/System
+  #33 = NameAndType        #41:#42        // out:Ljava/io/PrintStream;
+  #34 = Utf8               Is prime:
+  #35 = Class              #43            // java/io/PrintStream
+  #36 = NameAndType        #44:#45        // print:(Ljava/lang/String;)V
+  #37 = NameAndType        #46:#13        // println:(I)V
+  #38 = Utf8               com/company/Primes
+  #39 = Utf8               java/lang/Object
+  #40 = Utf8               java/lang/System
+  #41 = Utf8               out
+  #42 = Utf8               Ljava/io/PrintStream;
+  #43 = Utf8               java/io/PrintStream
+  #44 = Utf8               print
+  #45 = Utf8               (Ljava/lang/String;)V
+  #46 = Utf8               println
+{
+  private int _upTo;
+    descriptor: I
+    flags: (0x0002) ACC_PRIVATE
+
+  public com.company.Primes(int);
+    descriptor: (I)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: iload_1
+         6: putfield      #2                  // Field _upTo:I
+         9: return
+      LineNumberTable:
+        line 6: 0
+        line 8: 4
+        line 9: 9
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lcom/company/Primes;
+            0      10     1  upTo   I
+
+  void calculate();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=2, locals=2, args_size=1
+         0: iconst_1
+         1: istore_1
+         2: iload_1
+         3: aload_0
+         4: getfield      #2                  // Field _upTo:I
+         7: if_icmpgt     39
+        10: aload_0
+        11: iload_1
+        12: invokevirtual #3                  // Method isPrime:(I)Z
+        15: ifeq          33
+        18: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        21: ldc           #5                  // String Is prime:
+        23: invokevirtual #6                  // Method java/io/PrintStream.print:(Ljava/lang/String;)V
+        26: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        29: iload_1
+        30: invokevirtual #7                  // Method java/io/PrintStream.println:(I)V
+        33: iinc          1, 1
+        36: goto          2
+        39: return
+      LineNumberTable:
+        line 12: 0
+        line 13: 10
+        line 14: 18
+        line 15: 26
+        line 12: 33
+        line 18: 39
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            2      37     1     i   I
+            0      40     0  this   Lcom/company/Primes;
+      StackMapTable: number_of_entries = 3
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+        frame_type = 30 /* same */
+        frame_type = 250 /* chop */
+          offset_delta = 5
+
+  private boolean isPrime(int);
+    descriptor: (I)Z
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=2, locals=3, args_size=2
+         0: iload_1
+         1: iconst_4
+         2: if_icmpge     7
+         5: iconst_1
+         6: ireturn
+         7: iload_1
+         8: iconst_2
+         9: irem
+        10: ifne          15
+        13: iconst_0
+        14: ireturn
+        15: iconst_3
+        16: istore_2
+        17: iload_2
+        18: iload_2
+        19: imul
+        20: iload_1
+        21: if_icmpgt     38
+        24: iload_1
+        25: iload_2
+        26: irem
+        27: ifne          32
+        30: iconst_0
+        31: ireturn
+        32: iinc          2, 2
+        35: goto          17
+        38: iconst_1
+        39: ireturn
+      LineNumberTable:
+        line 21: 0
+        line 22: 5
+        line 23: 7
+        line 24: 13
+        line 25: 15
+        line 26: 24
+        line 27: 30
+        line 25: 32
+        line 29: 38
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           17      21     2     d   I
+            0      40     0  this   Lcom/company/Primes;
+            0      40     1     i   I
+      StackMapTable: number_of_entries = 5
+        frame_type = 7 /* same */
+        frame_type = 7 /* same */
+        frame_type = 252 /* append */
+          offset_delta = 1
+          locals = [ int ]
+        frame_type = 14 /* same */
+        frame_type = 250 /* chop */
+          offset_delta = 5
+}
+SourceFile: "Main.java"
