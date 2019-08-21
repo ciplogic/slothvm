@@ -39,6 +39,12 @@ namespace SlothVm.Lex
                 c => char.IsLetterOrDigit(c) || c == '_');
         }
 
+        private static int MatchInteger(string text)
+        {
+            return LexerExtensions.MatchAllChars(text, 
+                c => LexerExtensions.MatchRange(c, '0', '9'));
+        }
+
         private LexerRule[] DefaultRules = Rules();
 
         private static LexerRule[] Rules()
@@ -47,6 +53,7 @@ namespace SlothVm.Lex
             result.AddRule(TokenKind.Spaces, MatchSpaces);
             result.AddRule(TokenKind.Reserved, MatchReserved);
             result.AddRule(TokenKind.Identifier, MatchIdentifier);
+            result.AddRule(TokenKind.Integer, MatchInteger);
             
             return result.ToArray();
         }

@@ -4,7 +4,8 @@ namespace SlothVm.Lex
     {
         Spaces,
         Identifier,
-        Reserved
+        Reserved,
+        Integer
     }
 
     public struct Token
